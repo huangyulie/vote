@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>投票首页</title>
+    <link rel="shortcut icon" href="/index/images/123123.ico">
+    <link rel="stylesheet" href="/index/css/normalize.css">
+    <link rel="stylesheet" href="/index/css/base.css">
+    <link rel="stylesheet" href="/index/css/index.css">
+</head>
+<body>
+    <div id = "container">
+        <nav>
+            <a href="/index/index" class="nav-index">首页</a>
+            <a href="{{msg?'javascript:;':'/index/login'}}" class="nav-login">{{msg?msg:'登录'}}</a>
+            <a href="{{msg?'logout':'/index/register'}}" class="nav-register" id="nav-register">{{msg?'退出':'注册'}}</a>
+        </nav>
+        <header>
+            <div class="second">
+            第二名
+            <span id="second-img" style="background-image:url(/index/images/{{s2.num}}.jpg)"></span>
+            </div>
+            <div class="first">
+            第一名
+            <span id="first-img" style="background-image:url(/index/images/{{s1.num}}.jpg)"></span>
+            </div>
+            <div class="third">
+            第三名
+            <span id="third-img" style="background-image:url(/index/images/{{s3.num}}.jpg)"></span>
+            </div>
+        </header>
+        <div id="human">......榜单</div>
+        <section>
+         {{each stu1}}
+            <div id="student">
+                <a id="people" href="/index/parter?id={{@$value._id}}" style="background-image:url(/index/images/{{$value.num}}.jpg)">
+                </a>
+                <p>
+                    {{$value.username}}
+                </p>
+                <h3>
+                    票数:{{$value.vote}}
+                </h3>
+                <a id="button-people" href="/index/ote?id={{@$value._id}}">
+                    投票
+                </a>
+            </div>
+         {{/each}}
+            <div id="white"></div>
+        </section>
+        <div id="rlues">
+
+        </div>
+        <footer>
+        认准yulie Huang
+        </footer>
+    </div>
+</body>
+<script src="/index/js/jQuery.js"></script>
+<script src="/index/js/common.js"></script>
+<script>
+    var btn = document.querySelectorAll('#button-people');
+    var peo = document.querySelectorAll("#people");
+    let btn1 = document.getElementById('nav-register');
+    let flag = {{msg?1:0}};
+    let stus = {{stus}};
+    for(let i = 0;i<btn.length;++i){
+        btn[i].onclick = function(){
+            if(flag){
+                if(confirm('你确认要投票吗?')==true){
+                    if(stus > 2){
+                        alert('一天最多投三次哦');
+                        }else{
+                            
+                        alert('投票成功');
+                        }
+                }else{
+                    btn[i].href = '/index/index';
+                }
+            }else{
+                alert('请先登录');
+                btn[i].href = '/index/login';
+            }
+        }
+    }
+</script>
+</html>

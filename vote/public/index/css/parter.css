@@ -1,0 +1,156 @@
+body {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+#index {
+  width: 100%;
+  height: 7vw;
+  text-align: center;
+  font-size: 7vw;
+  font-weight: 700;
+  line-height: 5vw;
+  border-bottom: 2px #000000 solid;
+}
+section {
+  width: 100%;
+  height: 80vw;
+  background-color: red;
+}
+section #human {
+  overflow: hidden;
+  width: 100%;
+  height: 60vw;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+section #human #singer {
+  border: 1vw solid #9da3a2;
+  box-shadow: 0 0 5px #f4bc03, 0 0 25px #f4bc03, 0 0 50px #f4bc03, 0 0 100px #f4bc03;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  margin: 5vw auto;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section #human #name {
+  font-size: 7vw;
+  text-align: center;
+}
+section #flower {
+  display: flex;
+  width: 100%;
+  height: 20vw;
+}
+section #flower #flower1 {
+  flex: 1;
+  text-align: center;
+  line-height: 20vw;
+  font-size: 8vw;
+  height: 20vw;
+  background-color: #fff;
+}
+section #flower #flower2 {
+  flex: 1;
+  background-color: #ace0f9;
+  height: 20vw;
+}
+section #flower #flower2 h2 {
+  text-align: center;
+  height: 3vw;
+}
+section #flower #flower2 p {
+  font-size: 4vw;
+  text-align: center;
+}
+#btn {
+  position: relative;
+  width: 100%;
+  height: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFEFBA;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFFFFF, #FFEFBA);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-top: 1px #464343 solid;
+}
+#btn #btn1 {
+  top: 7vw;
+  position: absolute;
+  cursor: pointer;
+  font-size: 10vw;
+  text-align: center;
+  line-height: 15vw;
+  border-radius: 5vw;
+  width: 80%;
+  height: 15vw;
+  border: 1px solid black;
+  background: #2980B9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-decoration: none;
+  color: #0f0b02;
+  box-shadow: 1vw 1vw 1vw #d3a7a7;
+}
+.sea {
+  color: black;
+  width: 100%;
+  height: 75vw;
+  background-image: linear-gradient(darkblue, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.5));
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.sea p {
+  position: absolute;
+  top: 5%;
+  display: block;
+  font-size: 7vw;
+  text-align: center;
+  height: 5vw;
+  width: 100%;
+  line-height: 5vw;
+}
+.sea h4 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 20%;
+  text-align: center;
+  font-size: 10vw;
+  height: 10vw;
+}
+.sea .wave {
+  position: absolute;
+  top: -250px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: deepskyblue;
+  border-radius: 43%;
+  filter: opacity(0.4);
+  animation: drift linear infinite;
+  transform-origin: 50% 48%;
+}
+.sea .wave:nth-of-type(1) {
+  animation-duration: 5s;
+}
+.sea .wave:nth-of-type(2) {
+  animation-duration: 7s;
+}
+.sea .wave:nth-of-type(3) {
+  animation-duration: 9s;
+  background-color: orangered;
+  filter: opacity(0.1);
+}
+@keyframes drift {
+  from {
+    transform: rotate(360deg);
+  }
+}

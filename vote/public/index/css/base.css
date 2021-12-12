@@ -1,0 +1,54 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to top, #fff1eb 0%, #62c5f3 100%);
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ydhbbj');
+  src:  url('../fonts/icomoon.eot?ydhbbj#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?ydhbbj') format('truetype'),
+  url('../fonts/icomoon.woff?ydhbbj') format('woff'),
+  url('../fonts/icomoon.svg?ydhbbj#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+#container {
+  min-height: 100%; /* 2. 需要将容器的高度设置成100% */
+  position: relative; /* 3. 容器的position设置为relative，给子元素定位提供基点 */
+}
+
+  nav {
+    display: flex;
+    width: 100%;
+    height: 13.3vw;
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    justify-content: flex-end;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin-bottom: 3vw;
+  }
+  nav a {
+    display: flex;
+    margin-right: 4vw;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-size: 5vw;
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    line-height: 10vw;
+    margin-top: 10vw;
+    position: absolute;
+    bottom: 0;
+    height: 10vw;
+    width: 100%;
+    clear: both;
+    background-color: #d1cccc;
+  }

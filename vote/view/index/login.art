@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/index/images/123123.ico">
+    <link rel="stylesheet" href="/index/css/normalize.css">
+    <link rel="stylesheet" href="/index/css/base.css">
+    <link rel="stylesheet" href="/index/css/register.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+        <a href="index" class="nav-index">首页</a>
+        <a href="login" class="nav-login">登录</a>
+        <a href="register" class="nav-register">注册</a>
+    </nav>
+    <section>
+        欢迎进入登录页面
+    </section>
+    <form action="/index/login" method="post" id="loginForm">
+        <label>
+            <h3>用户名:</h3>
+            <input type="text" placeholder="请输入用户名" name="user">
+            <span id="user">  </span>
+        </label>
+        <label>
+            <h3>密码:</h3>
+            <input type="password" placeholder="请输入密码" name="password">
+            <span id="user">  </span>
+        </label>
+        <label>
+            <h3>验证码:</h3>
+            <input type="text" id="inputCode" name="inputcode"  placeholder="请输入验证码" style="float:left;" />
+        </label>
+        <div id="che">
+            <div id="checkCode" class="code"  onclick="createCode(4)" ></div>
+            <span onclick="createCode(4)">看不清换一张</span>
+        </div>
+        <button>提交登录信息</button>
+    </form>
+    <footer>
+        认准yulie Huang
+    </footer>
+    </div>
+</body>
+<script src="/index/js/jQuery.js"></script>
+<script src="/index/js/common.js"></script>
+<script>
+    let loginForm = document.getElementById("loginForm");
+    loginForm.onsubmit = function(){
+        let result = serializeToJson($(this));
+        let checkCode = document.getElementById("checkCode").innerHTML;
+        //用户没有输入
+        console.log(result.inputcode);
+        console.log(checkCode);
+        if(result.user.trim().length == 0){
+            alert("请输入用户名");
+            return false;
+        }
+        if(result.password.trim().length == 0){
+            alert("请输入密码");
+            return false;
+        }
+        if(result.inputcode.trim().length == 0){
+            alert("请输入验证码");
+            return false;
+        }
+        if(result.inputcode.toUpperCase() != checkCode.toUpperCase()){
+            alert("验证码输入有误!");
+            createCode(4);
+            return false;
+        }
+    }
+     //页面加载时，生成随机验证码
+    window.onload=function(){
+     createCode(4);    
+    }
+ 
+    //生成验证码的方法
+    function createCode(length) {
+        var code = "";
+        var codeLength = parseInt(length); //验证码的长度
+        var checkCode = document.getElementById("checkCode");
+        //所有候选组成验证码的字符，当然也可以用中文的
+        var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+        'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); 
+        //循环组成验证码的字符串
+        for (var i = 0; i < codeLength; i++)
+        {
+            //获取随机验证码下标
+            var charNum = Math.floor(Math.random() * 62);
+            //组合成指定字符验证码
+            code += codeChars[charNum];
+        }
+        if (checkCode)
+        {
+            //为验证码区域添加样式名
+            checkCode.className = "code";
+            //将生成验证码赋值到显示区
+            checkCode.innerHTML = code;
+        }
+    }
+    
+</script>
+</html>

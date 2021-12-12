@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index/css/base.css">
+    <link rel="stylesheet" href="/index/css/normalize.css">
+    <link rel="stylesheet" href="/index/css/login.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+        <a href="index" class="nav-index">首页</a>
+        </nav>
+        <section>
+        欢迎进入注册页面
+        </section>
+        <form action="/index/register" method="post" id="loginForm">
+        <label>
+            <h3>用户名:</h3>
+            <input type="text" name='username' placeholder="请输入用户名(2~12位)">
+            <span id="user">  </span>
+        </label>
+        <label>
+            <h3>手机号码:</h3>
+            <input type="text" name='phone' placeholder="请输入正确的手机号码">
+            <span id="user">  </span>
+        </label>
+        <label>
+            <h3>密码:</h3>
+            <input type="password" name='password1' placeholder="请输入密码(6~20位)">
+            <span id="user">  </span>
+        </label>
+        <label>
+            <h3>确认密码:</h3>
+            <input type="password" name='password2' placeholder="请确认密码(和上面密码一致)">
+            <span id="user">  </span>
+        </label>
+        <button>提交注册信息</button>
+        </form>
+        <footer>
+        认准yulie Huang
+        </footer>
+    </div>
+</body>
+<script src="/index/js/jQuery.js"></script>
+<script src="/index/js/common.js"></script>
+<script>
+    let loginForm = document.getElementById("loginForm");
+    loginForm.onsubmit = function(){
+        let result = serializeToJson($(this));
+        console.log(result);
+        //用户没有输入
+        if(result.username.trim().length == 0){
+            alert("请输入用户名");
+            return false;
+        }
+        if(result.phone.trim().length == 0){
+            alert("请输入手机号");
+            return false;
+        }
+        if(result.password1.trim().length == 0 ){
+            alert("请输入密码");
+            return false;
+        }
+        if(result.password2.trim().length == 0 ){
+            alert("请输入确认密码");
+            return false;
+        }
+        // $.ajax({
+        //     url:'/login',
+        //     type:'POST',
+        //     data:data
+        // });
+    }
+</script>
+
+</html>

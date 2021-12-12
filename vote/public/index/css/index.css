@@ -1,0 +1,143 @@
+header {
+  box-sizing: border-box;
+  border-radius: 5vw;
+  font-size: 4vw;
+  display: flex;
+  margin-left: 2vw;
+  border: 1vw #57a6e7 solid;
+  width: 96%;
+  height: 38vw;
+  background: url(../images/4.png) no-repeat;
+  background-size: 100%;
+  align-items: flex-end;
+  justify-content: center;
+}
+header div {
+  position: relative;
+  color: white;
+  text-align: center;
+  background-color: rgba(30, 26, 26, 0.8);
+  width: 20vw;
+}
+header div span {
+  display: block;
+  position: absolute;
+  width: 13vw;
+  height: 13vw;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -6vw;
+  border-radius: 50%;
+  border: 1px solid #d3dfeb;
+  box-shadow: 1px 1px 2px 2px #da8302;
+}
+header div #first-img {
+  background-repeat: no-repeat;
+  margin-bottom: 11vw;
+  background-size: cover;
+}
+header div #second-img {
+  background-repeat: no-repeat;
+  margin-bottom: 7vw;
+  background-size: cover;
+}
+header div #third-img {
+  background-repeat: no-repeat;
+  margin-bottom: 6vw;
+  background-size: cover;
+}
+header .first {
+  height: 20vw;
+  line-height: 30vw;
+}
+header .second {
+  height: 13vw;
+  line-height: 16vw;
+}
+header .third {
+  height: 10vw;
+  line-height: 10vw;
+}
+section {
+  background: linear-gradient(to top, #fff1eb 0%, #62c5f3 100%);
+  font-size: 4vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section #student {
+  position: relative;
+  width: 50%;
+  height: 63vw;
+}
+section #student #people {
+  border: 2px #57a6e7 solid;
+  display: block;
+  margin: 10vw auto;
+  width: 45vw;
+  height: 47vw;
+  bottom: 5vw;
+  border-radius: 3vw 3vw 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section #student p {
+  border: 2px #57a6e7 solid;
+  border-top: 1px solid transparent;
+  position: absolute;
+  display: block;
+  height: 10vw;
+  width: 45.1vw;
+  text-align: left;
+  text-indent: 4vw;
+  line-height: 7vw;
+  font-weight: 700;
+  top: 53.6vw;
+  left: 1.9vw;
+  border-radius: 0 0 3vw 3vw;
+  background-color: #dfdede;
+}
+section #student h3 {
+  font-size: 3vw;
+  font-weight: 400;
+  color: red;
+  position: absolute;
+  display: block;
+  height: 10vw;
+  width: 45vw;
+  text-align: left;
+  text-indent: 7vw;
+  line-height: 14vw;
+  top: 55.8vw;
+}
+section #student #button-people {
+  position: absolute;
+  font-size: 5vw;
+  display: block;
+  width: 15vw;
+  height: 15vw;
+  bottom: 1.5vw;
+  right: 5vw;
+  border: 1px solid red;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15vw;
+  background-color: #ebe1dc;
+  color: #0a0a0a;
+  z-index: 2;
+  cursor: pointer;
+  text-decoration: none;
+}
+#human {
+  height: 10vw;
+  font-size: 8vw;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  line-height: 10vw;
+  border-bottom: 2px solid #036b85;
+}
+#white {
+  height: 20vw;
+  width: 100%;
+}

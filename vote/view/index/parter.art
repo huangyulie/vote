@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>投票</title>
+    <link rel="shortcut icon" href="/index/images/123123.ico">
+    <link rel="stylesheet" href="/index/css/normalize.css">
+    <link rel="stylesheet" href="/index/css/base.css">
+    <link rel="stylesheet" href="/index/css/parter.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <a href="/index/index" class="nav-index">首页</a>
+            <a href="{{msg?'javascript:;':'/index/login'}}" class="nav-login">{{msg?msg:'登录'}}</a>
+            <a href="/index/index" class="nav-register">返回</a>
+        </nav>
+        <div id="index">
+            欢迎进入选手主页
+        </div>
+        <section>
+            <div id="human">
+                <div id="singer" style="background-image:url(/index/images/{{num}}.jpg)"></div>
+                <div id="name">{{name}}</div>
+            </div>
+            <div id="flower">
+                <div id="flower1"> 
+                    {{rank}}
+                </div>
+                <div id="flower2">
+                    <h2> {{vote}} </h2>
+                    <p> 票数 </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="sea">
+            <span class="wave"></span>
+            <span class="wave"></span>
+            <span class="wave"></span>
+            <p>演唱歌曲</p>
+            <h4>《{{sing}}》</h4>
+        </div>
+        <div id="btn">
+            <a id="btn1" href="/index/ote?id={{id}}">点击投票</a>
+        </div>
+        <div id="rules">
+
+        </div>
+        <footer>
+            认准yulie Huang
+        </footer>
+    </div>
+</body>
+<script>
+   let btn1 = document.getElementById('btn1');
+
+    let flag = {{msg?1:0}};
+    let stus = {{stus}};
+
+    // btn1.onclick = function(){
+    //     alert('12312');
+    // }
+    btn1.onclick = function(){
+        if(flag){
+            if(confirm('你确认要投票吗?')==true){
+                if(stus > 2){
+                    alert('一天最多投三次哦');
+                }else{
+                    
+                    alert('投票成功');
+                }
+            }else{
+                btn1.href = '/index/index';
+            }
+        }else{
+            alert('请先登录');
+            btn1.href = '/index/login';
+        }
+    }
+</script>
+</html>
