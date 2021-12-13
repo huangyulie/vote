@@ -19,6 +19,11 @@ form label {
   width: 70%;
   height: 30vw;
 }
+form label h3 {
+  margin: 0;
+  font-size: 6vw;
+  margin-bottom: 5vw;
+}
 form label #user {
   position: absolute;
   top: 17vw;
@@ -29,30 +34,49 @@ form label #user {
   color: #141414;
 }
 form label input {
+  position: relative;
   appearance: none;
   border: 1px solid rgba(169, 168, 168, 0.7);
   height: 8vw;
   width: 100%;
 }
-form .code {
+form label #inputCode {
+  width: 67%;
+  display: inline-block;
+}
+form h3::after {
+  font-family: 'icomoon';
   position: absolute;
-  bottom: 30vw;
-  right: 13.64vw;
+  z-index: 1;
+  top: 11vw;
+  right: 0;
+  width: 10vw;
+  height: 10vw;
+  text-align: center;
+  line-height: 10vw;
+}
+form #u1::after {
+  content: '';
+}
+form #u2::after {
+  content: '';
+}
+form .code {
+  display: inline-block;
   font-family: Arial;
   font-style: italic;
   color: blue;
-  font-size: 5vw;
+  font-size: 6vw;
   border: 0;
+  width: 28%;
+  height: 8vw;
   padding: 2px 3px;
   letter-spacing: 3px;
+  line-height: 8vw;
   font-weight: bolder;
   cursor: pointer;
-  width: 20vw;
-  height: 10vw;
-  line-height: 10vw;
   text-align: center;
   vertical-align: middle;
-  background-color: #cc80e7;
 }
 form button {
   margin-top: 10vw;

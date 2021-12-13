@@ -153,10 +153,10 @@ index.get('/ote',async (req,res)=>{
     if(req.session.username !== undefined){
         stus = await User.find({username:req.session.username});
     }else{
-        stus = [{data:4}];
+        stus = [{data:1}];
     }
 
-    if(stus[0].data > 2){
+    if(stus[0].data > 0){
         res.redirect('/index/index')
     }else{
         await Stu.updateOne({_id:id},{
@@ -171,5 +171,6 @@ index.get('/ote',async (req,res)=>{
 
 index.get('/parter',require('./index/parter'));
 //暴露
+index.get('/rank',require('./index/rank'));
 
 module.exports = index;

@@ -58,76 +58,6 @@ header .third {
   height: 10vw;
   line-height: 10vw;
 }
-section {
-  background: linear-gradient(to top, #fff1eb 0%, #62c5f3 100%);
-  font-size: 4vw;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-section #student {
-  position: relative;
-  width: 50%;
-  height: 63vw;
-}
-section #student #people {
-  border: 2px #57a6e7 solid;
-  display: block;
-  margin: 10vw auto;
-  width: 45vw;
-  height: 47vw;
-  bottom: 5vw;
-  border-radius: 3vw 3vw 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-section #student p {
-  border: 2px #57a6e7 solid;
-  border-top: 1px solid transparent;
-  position: absolute;
-  display: block;
-  height: 10vw;
-  width: 45.1vw;
-  text-align: left;
-  text-indent: 4vw;
-  line-height: 7vw;
-  font-weight: 700;
-  top: 53.6vw;
-  left: 1.9vw;
-  border-radius: 0 0 3vw 3vw;
-  background-color: #dfdede;
-}
-section #student h3 {
-  font-size: 3vw;
-  font-weight: 400;
-  color: red;
-  position: absolute;
-  display: block;
-  height: 10vw;
-  width: 45vw;
-  text-align: left;
-  text-indent: 7vw;
-  line-height: 14vw;
-  top: 55.8vw;
-}
-section #student #button-people {
-  position: absolute;
-  font-size: 5vw;
-  display: block;
-  width: 15vw;
-  height: 15vw;
-  bottom: 1.5vw;
-  right: 5vw;
-  border: 1px solid red;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 15vw;
-  background-color: #ebe1dc;
-  color: #0a0a0a;
-  z-index: 2;
-  cursor: pointer;
-  text-decoration: none;
-}
 #human {
   height: 10vw;
   font-size: 8vw;
@@ -191,4 +121,9 @@ section #student #button-people {
   margin-bottom: 5vw;
   background: url(../images/link.png) no-repeat;
   background-size: 100%;
+}
+section {
+  width: 100%;
+  height: 100vw;
+  background-color: #fffbfb;
 }

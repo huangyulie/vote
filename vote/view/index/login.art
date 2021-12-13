@@ -22,23 +22,18 @@
     </section>
     <form action="/index/login" method="post" id="loginForm">
         <label>
-            <h3>用户名:</h3>
+            <h3 id="u1">用户名:</h3>
             <input type="text" placeholder="请输入用户名" name="user">
-            <span id="user">  </span>
         </label>
         <label>
-            <h3>密码:</h3>
+            <h3 id="u2">密码:</h3>
             <input type="password" placeholder="请输入密码" name="password">
-            <span id="user">  </span>
         </label>
         <label>
             <h3>验证码:</h3>
             <input type="text" id="inputCode" name="inputcode"  placeholder="请输入验证码" style="float:left;" />
-        </label>
-        <div id="che">
             <div id="checkCode" class="code"  onclick="createCode(4)" ></div>
-            <span onclick="createCode(4)">看不清换一张</span>
-        </div>
+        </label >
         <button>提交登录信息</button>
     </form>
     <footer>

@@ -66,8 +66,8 @@
     btn1.onclick = function(){
         if(flag){
             if(confirm('你确认要投票吗?')==true){
-                if(stus > 2){
-                    alert('一天最多投三次哦');
+                if(stus > 0){
+                    alert('一天最多投一次哦');
                 }else{
                     
                     alert('投票成功');

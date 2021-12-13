@@ -16,6 +16,11 @@ form{
         position: relative;
         width: 70%;
         height: 30vw;
+        h3{
+            margin: 0;
+            font-size: 6vw;
+            margin-bottom: 5vw;
+        }
         input{
             appearance: none;
             border: 1px solid rgba(169, 168, 168,0.7);
@@ -31,6 +36,29 @@ form{
             display: block;
             color: rgb(20, 20, 20);
         }
+    }
+    h3::after{
+        font-family: 'icomoon';
+        position: absolute;
+        z-index: 1;
+        top: 11vw;
+        right: 0;
+        width: 10vw;
+        height: 10vw;
+        text-align: center;
+        line-height: 10vw;
+    }
+    #u1::after{
+        content: '';
+    }
+    #u2::after{
+        content: '';
+    }
+    #u3::after{
+        content: '';
+    }
+    #u4::after{
+        content: '';
     }
     div{
         width: 70%;

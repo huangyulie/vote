@@ -11,7 +11,7 @@ module.exports = async(req,res)=>{
     if(req.session.username !== undefined){
         stus = await User.find({username:req.session.username});
     }else{
-        stus = [{data:4}];
+        stus = [{data:1}];
     }
     let name = stu[0].username;
     let num = stu[0].num;

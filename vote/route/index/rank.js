@@ -14,22 +14,12 @@ module.exports = async(req,res)=>{
     }
     let stu1 = stu.sort(compare("vote"));
 
-
-    let stus;
-
-    if(req.session.username !== undefined){
-        stus = await User.find({username:req.session.username});
-    }else{
-        stus = [{data:1}];
-    }
-
-    res.render('index/index',{
+    res.render('index/rank',{
         msg:req.session.username,
         stu1:stu1,
         s1 : stu1[0],
         s2 : stu1[1],
         s3 : stu1[2],
-        stus: stus[0].data,
         count:count
     });
 }

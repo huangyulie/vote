@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/index/images/123123.ico">
     <link rel="stylesheet" href="/index/css/normalize.css">
     <link rel="stylesheet" href="/index/css/base.css">
-    <link rel="stylesheet" href="/index/css/index.css">
+    <link rel="stylesheet" href="/index/css/rank.css">
 </head>
 <body>
     <div id = "container">
@@ -45,7 +45,7 @@
                 <span>选手数量</span>
             </div>
         </div>
-        <section>
+        <!--<section>
          {{each stu1}}
             <div id="student">
                 <a id="people" href="/index/parter?id={{@$value._id}}" style="background-image:url(/index/images/{{$value.num}}.jpg)">
@@ -62,7 +62,8 @@
             </div>
          {{/each}}
             <div id="white"></div>
-        </section>
+        </section>-->
+        <section></section>
         <div id="rules">
             <a id="vo" href="/index/index">投票</a>
             <a id="" href="javascript:;">介绍</a>
@@ -79,29 +80,12 @@
     let btn1 = document.getElementById('nav-register');
     let rules = document.getElementById('rules');
     let a = rules.getElementsByTagName('a');
-    a[0].id = 'vo';
-    a[2].id = '';
+    // rules.onclick = function(){
+    //     console.log('123');
+    // }
+    a[2].id = 'vo';
+    a[0].id = '';
     a[1].id = '';
     a[3].id = '';
-    let flag = {{msg?1:0}};
-    let stus = {{stus}};
-    for(let i = 0;i<btn.length;++i){
-        btn[i].onclick = function(){
-            if(flag){
-                if(confirm('你确认要投票吗?')==true){
-                    if(stus > 0){
-                        alert('一天最多投一次哦');
-                        }else{
-                        alert('投票成功');
-                        }
-                }else{
-                    btn[i].href = '/index/index';
-                }
-            }else{
-                alert('请先登录');
-                btn[i].href = '/index/login';
-            }
-        }
-    }
 </script>
 </html>

@@ -19,24 +19,20 @@
         </section>
         <form action="/index/register" method="post" id="loginForm">
         <label>
-            <h3>用户名:</h3>
+            <h3 id="u1">用户名:</h3>
             <input type="text" name='username' placeholder="请输入用户名(2~12位)">
-            <span id="user">  </span>
         </label>
         <label>
-            <h3>手机号码:</h3>
+            <h3 id="u2">手机号码:</h3>
             <input type="text" name='phone' placeholder="请输入正确的手机号码">
-            <span id="user">  </span>
         </label>
         <label>
-            <h3>密码:</h3>
+            <h3 id="u3">密码:</h3>
             <input type="password" name='password1' placeholder="请输入密码(6~20位)">
-            <span id="user">  </span>
         </label>
         <label>
-            <h3>确认密码:</h3>
+            <h3 id="u4">确认密码:</h3>
             <input type="password" name='password2' placeholder="请确认密码(和上面密码一致)">
-            <span id="user">  </span>
         </label>
         <button>提交注册信息</button>
         </form>
