@@ -172,5 +172,8 @@ index.get('/ote',async (req,res)=>{
 index.get('/parter',require('./index/parter'));
 //暴露
 index.get('/rank',require('./index/rank'));
+index.get('/talk',require('./index/talk'));
+index.post('/comment',require('./index/comment'));
+index.get('/js',require('./index/js'));
 
 module.exports = index;

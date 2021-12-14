@@ -65,9 +65,9 @@
         </section>
         <div id="rules">
             <a id="vo" href="/index/index">投票</a>
-            <a id="" href="javascript:;">介绍</a>
+            <a id="" href="/index/js">介绍</a>
             <a id="" href="/index/rank">排行</a>
-            <a id="" href="javascript:;">评论</a>
+            <a id="" href="/index/talk">评论</a>
         </div>
     </div>
 </body>

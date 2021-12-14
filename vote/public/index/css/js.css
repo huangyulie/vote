@@ -122,48 +122,23 @@ header .third {
   background: url(../images/link.png) no-repeat;
   background-size: 100%;
 }
-section {
-  width: 100%;
-  background: linear-gradient(to top, #fff1eb 0%, #62c5f3 100%);
-}
-section #rank {
-  width: 100%;
-  height: 14vw;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(24, 17, 17, 0.3);
-}
-section #rank li {
-  float: left;
-  text-align: center;
-  line-height: 14vw;
-}
-section #rank .l1 {
-  font-size: 7vw;
-  margin-left: 5vw;
-}
-section #rank .l2 {
-  margin-left: 5vw;
-  box-sizing: border-box;
-  height: 14vw;
-  width: 14vw;
-  background-color: #fff;
-  border: 1px solid orange;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-section #rank .l3 {
-  font-size: 5vw;
-  margin-left: 3vw;
-}
-section #rank .l4 {
-  float: right;
-  margin-right: 5vw;
-}
 #white {
   height: 17vw;
   width: 100%;
+}
+#main {
+  background-color: #abe0e0;
+}
+#main .m {
+  margin-bottom: 5vw;
+}
+#main .m p {
+  text-align: center;
+  font-size: 7vw;
+  margin: 0;
+  color: #ca1f1f;
+  font-weight: 700;
+}
+#main .m .topic {
+  text-align: center;
 }

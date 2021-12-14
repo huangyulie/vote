@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/index/images/123123.ico">
     <link rel="stylesheet" href="/index/css/normalize.css">
     <link rel="stylesheet" href="/index/css/base.css">
-    <link rel="stylesheet" href="/index/css/rank.css">
+    <link rel="stylesheet" href="/index/css/talk.css">
 </head>
 <body>
     <div id = "container">
@@ -17,9 +17,7 @@
             <a href="{{msg?'javascript:;':'/index/login'}}" class="nav-login">{{msg?msg:'登录'}}</a>
             <a href="{{msg?'logout':'/index/register'}}" class="nav-register" id="nav-register">{{msg?'退出':'注册'}}</a>
         </nav>
-        <div id="image">
-             
-        </div>
+        <div id="image"></div>
         <header>
             <div class="second">
             第二名
@@ -45,16 +43,51 @@
                 <span>选手数量</span>
             </div>
         </div>
-        <section>
-         {{each stu1}}
-            <ul id="rank">
-                <li class="l1">1</li>
-                <li class="l2" style="background-image:url(/index/images/{{$value.num}}.jpg)"></li>
-                <li class="l3"> {{$value.username}}</li>
-                <li class="l4"> {{$value.vote}}票</li>
-            </ul>
+        {{each comment1}}
+            <div id='content'>
+                <div id="user">
+                    {{$value.uid}}
+                </div>
+                <div id="floor">
+                    {{$value.aid}}楼
+                </div>
+                <div id="mask">
+                    {{$value.content}}
+                </div>
+                <div id="time">
+                    {{$value.time}}
+                </div>
+            </div>
         {{/each}}
+
+        <div class = 'page'>
+            <div style="display:<%=page-1 < 1?'none':'black' %>">
+                <a href="/index/talk?page=<%=page-1%>"> &lt; </a>
+            </div>
+            <% for(var i = 1; i <= total ;++i){%>
+            <div>
+                <a href="/index/talk?page=<%=i %>"> {{i}} </a>
+            </div>
+            <% }%>
+            <div style="display:<%=page-0+1 > total?'none':'black' %>">
+                <a href="/index/talk?page=<%=page-0+1%>"> &gt; </a>
+            </div>
+        </div>
+
+        {{if msg}}
+        <section>
+            <p> 评论 </p>
+            <form action="/index/comment" method="post">
+                <textarea name="content"></textarea>
+                <input type="hidden" name="username" value="{{msg}}">
+                <div id="item">
+                    <input type="submit" value="提交">
+                </div>
+            </form>
         </section>
+        {{else}}
+        <div id="login">先进行登录才能评论</div>
+        {{/if}}
         <div id="white"></div>
         <div id="rules">
             <a id="vo" href="/index/index">投票</a>
@@ -77,9 +110,9 @@
         let li = ul[i].querySelectorAll('li')
         li[0].innerHTML = i+1;
     }
-    a[2].id = 'vo';
-    a[0].id = '';
+    a[3].id = 'vo';
+    a[2].id = '';
     a[1].id = '';
-    a[3].id = '';
+    a[0].id = '';
 </script>
 </html>

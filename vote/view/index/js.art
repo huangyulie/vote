@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/index/images/123123.ico">
     <link rel="stylesheet" href="/index/css/normalize.css">
     <link rel="stylesheet" href="/index/css/base.css">
-    <link rel="stylesheet" href="/index/css/rank.css">
+    <link rel="stylesheet" href="/index/css/js.css">
 </head>
 <body>
     <div id = "container">
@@ -17,9 +17,7 @@
             <a href="{{msg?'javascript:;':'/index/login'}}" class="nav-login">{{msg?msg:'登录'}}</a>
             <a href="{{msg?'logout':'/index/register'}}" class="nav-register" id="nav-register">{{msg?'退出':'注册'}}</a>
         </nav>
-        <div id="image">
-             
-        </div>
+        <div id="image"></div>
         <header>
             <div class="second">
             第二名
@@ -45,16 +43,38 @@
                 <span>选手数量</span>
             </div>
         </div>
-        <section>
-         {{each stu1}}
-            <ul id="rank">
-                <li class="l1">1</li>
-                <li class="l2" style="background-image:url(/index/images/{{$value.num}}.jpg)"></li>
-                <li class="l3"> {{$value.username}}</li>
-                <li class="l4"> {{$value.vote}}票</li>
-            </ul>
-        {{/each}}
-        </section>
+        <div id="main">
+            <div class="m">
+                <p>活动主题</p>
+                <div class="topic">
+                    为庆祝...，弘扬....，由XXXX主办的XXXX评选活动。
+                </div>
+            </div>
+            <div class="m">
+                <p>活动时间</p>
+                <div class="topic">
+                    投票时间:
+
+                    2021-00-00 09:00至2021-00-00 20:00
+                </div>
+            </div>
+            <div class="m">
+                <p>评选规则</p>
+                <div class="topic">
+                投票规则:每个学号每天可投1票，只能为同一选手投1票
+投票声明：严禁任何作弊行为，系统会进行自动监测，一经发现立即取消投票资格
+                </div>
+            </div>
+            <div class="m" style="margin-bottom: 0">
+                <p>设置奖项</p>
+                <div class="topic">
+                一等奖X名:奖励XXXX</br>
+                二等奖X名:奖励XXXX</br>
+                三等奖X名:奖励XXXX</br>
+                入围奖X名:奖励XXXX
+                </div>
+            </div>
+        </div>
         <div id="white"></div>
         <div id="rules">
             <a id="vo" href="/index/index">投票</a>
@@ -77,9 +97,9 @@
         let li = ul[i].querySelectorAll('li')
         li[0].innerHTML = i+1;
     }
-    a[2].id = 'vo';
+    a[1].id = 'vo';
     a[0].id = '';
-    a[1].id = '';
+    a[2].id = '';
     a[3].id = '';
 </script>
 </html>
