@@ -10,7 +10,7 @@ module.exports = async(req,res)=>{
             var value1 = obj1[property];
             var value2 = obj2[property];
             return value2 - value1;     // 升序
-        }
+        }       
     }
     let stu1 = stu.sort(compare("vote"));
     res.render('index/rank',{

@@ -77,9 +77,9 @@
         {{if msg}}
         <section>
             <p> 评论 </p>
-            <form action="/index/comment" method="post">
+            <form action="/index/comment" method="post" id="logintalk">
                 <textarea name="content"></textarea>
-                <input type="hidden" name="username" value="{{msg}}">
+                <input type="hidden" name="username" value="{{msg}}" >
                 <div id="item">
                     <input type="submit" value="提交">
                 </div>
@@ -114,5 +114,16 @@
     a[2].id = '';
     a[1].id = '';
     a[0].id = '';
+
+    let logintalk = document.getElementById('logintalk');
+    logintalk.onsubmit = function(){
+        let result = serializeToJson($(this));
+        //用户没有输入
+        if(result.content.trim().length == 0){
+            alert("评论不能为空");
+            return false;
+        }
+    }
+    
 </script>
 </html>
