@@ -42,8 +42,15 @@ const student =  new mongoose.Schema({
     }
 });
 
+const yanzm =  new mongoose.Schema({
+    yzm:{
+        type:String,
+    }
+});
+
 const User = mongoose.model('User',userSchema);
 const Stu = mongoose.model('Stu',student);
+const yzm = mongoose.model('yzm',yanzm);
 
 // async function createUser(){
 //     const salt = await bcrypt.genSalt(10);
@@ -72,5 +79,5 @@ const Stu = mongoose.model('Stu',student);
 
 
 module.exports = {
-    User,Stu
+    User,Stu,yzm
 }

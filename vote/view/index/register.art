@@ -24,7 +24,12 @@
         </label>
         <label>
             <h3 id="u2">手机号码:</h3>
-            <input type="text" name='phone' placeholder="请输入正确的手机号码">
+            <input type="text" name='phone' placeholder="请输入正确的手机号码" id="phone1">
+            <input type="button" id="yzm" value="获取验证码">
+        </label>
+        <label>
+            <h3 id="u2">验证码:</h3>
+            <input type="text" name='yzm' placeholder="请输入正确的验证码">
         </label>
         <label>
             <h3 id="u3">密码:</h3>
@@ -34,7 +39,8 @@
             <h3 id="u4">确认密码:</h3>
             <input type="password" name='password2' placeholder="请确认密码(和上面密码一致)">
         </label>
-        <button>提交注册信息</button>
+        <button id="tijiao">提交注册信息</button>
+        <div id="white"></div>
         </form>
         <footer>
         认准yulie Huang
@@ -57,6 +63,10 @@
             alert("请输入手机号");
             return false;
         }
+         if(result.yzm.trim().length == 0 ){
+            alert("请输入验证码");
+            return false;
+        }
         if(result.password1.trim().length == 0 ){
             alert("请输入密码");
             return false;
@@ -71,6 +81,46 @@
         //     data:data
         // });
     }
+</script>
+<script>
+    var phoneReg = /^[1][0-9]{10}$/;;//手机号正则
+    var phone1 = document.getElementById('phone1'); 
+    var yzm = document.getElementById("yzm");
+    var time = 60;
+    yzm.addEventListener('click',function(){
+        if(phoneReg.test(phone1.value)){
+            $(this).attr("disabled",true);
+        this.value = '已发送';
+
+        var timer = setInterval(function () {
+            if(time == 0){
+                $("#yzm").removeAttr("disabled");
+                yzm.value="重新发送";
+                clearInterval(timer);
+            }else {
+                yzm.value = time +'s内有效';
+                time--;
+            }
+            console.log(time);
+        },1000);
+
+        if(!phoneReg.test(phone1.value)){
+           return false;
+        }else{
+            $.ajax({
+                url:'http://150.158.23.19:30000/index/yzm',
+                data:{phone:phone1.value},
+                type:'GET',
+                success:function(data){
+                    console.log(data);
+                }
+            })
+        }
+        }else{
+            alert('请输入正确的手机号码');
+        }
+        
+    })
 </script>
 
 </html>

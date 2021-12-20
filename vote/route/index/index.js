@@ -22,7 +22,6 @@ module.exports = async(req,res)=>{
     }else{
         stus = [{data:1}];
     }
-
     res.render('index/index',{
         msg:req.session.username,
         stu1:stu1,
